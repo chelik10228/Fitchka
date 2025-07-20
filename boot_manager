@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+
+import os;
+print("\033[H\033[2J\033[41m  \033[42m  \033[43m  \033[44m  \033[45m  \033[46m  \033[47m  \033[0m");
+print("Welcome to PtichkaOS Boot Manager");
+print("1 - run the ptichkaos");
+print("2 - exit");
+while True:
+    com = input("boot# ")
+    if com == "1":
+        os.system("python3 main.py");
+        exit();
+    elif com == "2":
+        exit();
