@@ -33,13 +33,14 @@ while True:
         print("  16. cd - go to folder");
         print("  17. write - write text in file, using: 'write text'");
         print("  18. over-write - the overwriting file, using: 'over-write file_name'");
-        print("  19. exit - exit from ptichkaos");
+        print("  19. rm - remove file");
+        print("  20. exit - exit from ptichkaos");
     elif (com[0] == "sleep"):
         sleep = input("Enter the number for time sleep: ");
         time.sleep(int(sleep));
     elif (com[0] == "pifetch"):
         print(" _   | Name: PtichkaOS");
-        print("('=  | Version: 1.0");
+        print("('=  | Version: 1.1");
         print("/_)  | Lang: Python 3");
         print("/||  | Developer: Luxidev");
         print("     | Release date: 2025-07-20\n");
@@ -101,5 +102,10 @@ while True:
     elif (com[0] == "over-write"):
         f = open("".join(com[1:]), "w");
         f;
+    elif (com[0] == "rm"):
+        if os.path.exists("".join(com[1:])):
+            os.remove("".join(com[1:]));
+        else:
+            print("The file does not exist");
     else:
         print("Bad command.");
