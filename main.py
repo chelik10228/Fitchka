@@ -1,8 +1,9 @@
+#!/usr/bin/python3
 import time;
 import random;
 import os;
-from pygame import mixer
-mixer.init();
+import pygame;
+pygame.mixer.init();
 os.chdir("vdisk/");
 
 clear = "\033[H\033[2J";
@@ -25,8 +26,12 @@ while True:
         print("  9. music-test - play the test of music");
         print("  10. music-play - play the music");
         print("  11. music-list - show all musics");
-        print("  12. ls - show files in vdisk (folder)");
-        print("  13. exit - exit from ptichkaos");
+        print("  12. music-pause - pause the music");
+        print("  13. music-unpause - unpause the music");
+        print("  14. music-stop - stop the music");
+        print("  15. ls - show files in vdisk (folder)");
+        print("  16. cd - go to folder");
+        print("  17. exit - exit from ptichkaos");
     elif (com[0] == "sleep"):
         sleep = input("Enter the number for time sleep: ");
         time.sleep(int(sleep));
@@ -62,19 +67,27 @@ while True:
         elif oper == "/":
             print(num1/num2);
     elif (com[0] == "music-test"):
-        mixer.music.load("vdisk/music/test.mp3");
-        mixer.music.play();
+        pygame.mixer.music.load("music/test.mp3");
+        pygame.mixer.music.play();
         print("Playing the 'test.mp3'");
     elif (com[0] == "music-play"):
-        music = input("Enter the filename: ");
-        mixer.music.load(music);
-        mixer.music.play();
-        print("Playing the", music);
+        pygame.mixer.music.load("".join(com[1:]));
+        pygame.mixer.music.play();
+        print("Playing the", "".join(com[1:]));
     elif (com[0] == "music-list"):
         os.system("find * -name '*.mp3'");
+    elif (com[0] == "music-pause"):
+        pygame.mixer.music.pause();
+        print("Paused the music");
+    elif (com[0] == "music-unpause"):
+        pygame.mixer.music.unpause();
+        print("Unpaused the music");
+    elif (com[0] == "music-stop"):
+        pygame.mixer.music.stop();
+        print("Stopped the music");
     elif (com[0] == "ls"):
         os.system("dir");
     elif (com[0] == "cd"):
-              os.chdir("".join(com[1:]));
+        os.chdir("".join(com[1:]));
     else:
         print("Bad command.");
