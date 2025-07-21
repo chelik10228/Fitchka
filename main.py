@@ -33,7 +33,7 @@ while True:
         print("  16. cd - go to folder");
         print("  17. write - write text in file, using: 'write text'");
         print("  18. over-write - the overwriting file, using: 'over-write file_name'");
-        print("  17. exit - exit from ptichkaos");
+        print("  19. exit - exit from ptichkaos");
     elif (com[0] == "sleep"):
         sleep = input("Enter the number for time sleep: ");
         time.sleep(int(sleep));
