@@ -31,6 +31,8 @@ while True:
         print("  14. music-stop - stop the music");
         print("  15. ls - show files in vdisk (folder)");
         print("  16. cd - go to folder");
+        print("  17. write - write text in file, using: 'write text'");
+        print("  18. over-write - the overwriting file, using: 'over-write file_name'");
         print("  17. exit - exit from ptichkaos");
     elif (com[0] == "sleep"):
         sleep = input("Enter the number for time sleep: ");
