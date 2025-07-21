@@ -89,5 +89,15 @@ while True:
         os.system("dir");
     elif (com[0] == "cd"):
         os.chdir("".join(com[1:]));
+    elif (com[0] == "cat"):
+        f = open("".join(com[1:]), "r");
+        print(f.read());
+    elif (com[0] == "write"):
+        file = input("Enter the filename: ");
+        f = open(file, "a");
+        f.write(" ".join(com[1:]));
+    elif (com[0] == "over-write"):
+        f = open("".join(com[1:]), "w");
+        f;
     else:
         print("Bad command.");
