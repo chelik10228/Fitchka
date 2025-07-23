@@ -10,7 +10,7 @@ while True:
 		print("\033[H\033[2J", end="\r");
 		print("Searched to:", search);
 		print("ChangeLog PtichkaOS: ");
-		print("  added text browser 'ptichkaweb'");
+		print("  added ptichkampv the video player using default mpv");
 	elif search == "developers ptichkaos":
 		print("Searching...");
 		time.sleep(1);

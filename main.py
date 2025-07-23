@@ -36,6 +36,7 @@ while True:
         print("  18. over-write - the overwriting file, using: 'over-write file_name'");
         print("  19. rm - remove file");
         print("  20. ptichkaweb - run ptichka web browser");
+        print("  21. ptichkampv - the video player using default mpv");
         print("  21. exit - exit from ptichkaos");
     elif (com[0] == "sleep"):
         sleep = input("Enter the number for time sleep: ");
@@ -111,5 +112,7 @@ while True:
             print("The file does not exist");
     elif (com[0] == "ptichkaweb"):
         subprocess.run(["xterm", "./ptichkaweb"]);
+    elif (com[0] == "ptichkampv"):
+        subprocess.run(["mpv", "".join(com[1:])]);
     else:
         print("Bad command.");
