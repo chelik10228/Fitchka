@@ -3,6 +3,7 @@ import time;
 import random;
 import os;
 import pygame;
+import subprocess;
 pygame.mixer.init();
 os.chdir("vdisk/");
 
@@ -34,13 +35,14 @@ while True:
         print("  17. write - write text in file, using: 'write text'");
         print("  18. over-write - the overwriting file, using: 'over-write file_name'");
         print("  19. rm - remove file");
-        print("  20. exit - exit from ptichkaos");
+        print("  20. ptichkaweb - run ptichka web browser");
+        print("  21. exit - exit from ptichkaos");
     elif (com[0] == "sleep"):
         sleep = input("Enter the number for time sleep: ");
         time.sleep(int(sleep));
     elif (com[0] == "pifetch"):
         print(" _   | Name: PtichkaOS");
-        print("('=  | Version: 1.1");
+        print("('=  | Version: 1.2");
         print("/_)  | Lang: Python 3");
         print("/||  | Developer: Luxidev");
         print("     | Release date: 2025-07-20\n");
@@ -107,5 +109,7 @@ while True:
             os.remove("".join(com[1:]));
         else:
             print("The file does not exist");
+    elif (com[0] == "ptichkaweb"):
+        subprocess.run(["xterm", "./ptichkaweb"]);
     else:
         print("Bad command.");
