@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import os;
+import subprocess;
 print("\033[H\033[2J", end="\r");
 print("\033[34m+----------------------+\033[0m");
 print("\033[34m|\033[0m \033[32m1\033[0m. Boot normally     \033[34m|\033[0m");
@@ -10,6 +10,6 @@ print("\033[34m+----------------------+\033[0m");
 while True:
     com = input("boot# ")
     if com == "1":
-        os.execve("./main.py", ["./main.py"], {});
+        subprocess.run(["xterm", "./main.py"]);
     elif com == "2":
         exit();
