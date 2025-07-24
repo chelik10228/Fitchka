@@ -44,10 +44,10 @@ while True:
         time.sleep(int(sleep));
     elif (com[0] == "pifetch"):
         print(" _   | Name: PtichkaOS");
-        print("('=  | Version: 1.2");
+        print("('=  | Version: 1.3");
         print("/_)  | Lang: Python 3");
         print("/||  | Developer: Luxidev");
-        print("     | Release date: 2025-07-20\n");
+        print("     | Release date: 2025-07-24\n");
         print("     \033[41m  \033[42m  \033[43m  \033[44m  \033[45m  \033[46m  \033[47m  \033[0m");
     elif (com[0] == "exit"):
         exit();
