@@ -1,0 +1,11 @@
+== PtichkaWeb help ==
+Keys:
+  g        Search
+  h        Help
+  q        Quit
+
+PtichkaWeb pages:
+	version
+	changelog
+	developers
+
