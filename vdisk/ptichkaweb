@@ -2,28 +2,34 @@
 import time;
 print("Welcome to PtichkaWeb");
 print("A simple text browser for PtichkaOS");
+r1 = "changelog ptichkaos"
+r2 = "developers ptichkaos"
+r3 = "version ptichkaos"
 while True:
 	search = input("Search: ");
-	if search == "changelog ptichkaos":
+	if search == r1:
 		print("Searching...");
 		time.sleep(1);
 		print("\033[H\033[2J", end="\r");
 		print("Searched to:", search);
 		print("ChangeLog PtichkaOS: ");
 		print("  added ptichkampv the video player using default mpv");
-	elif search == "developers ptichkaos":
+	elif search == r2:
 		print("Searching...");
 		time.sleep(1);
 		print("\033[H\033[2J", end="\r");
 		print("Searched to:", search);
 		print("Developers PtichkaOS: ");
 		print("  Luxidev");
-	elif search == "version ptichkaos":
+	elif search == r3:
 		print("Searching...");
 		time.sleep(1);
 		print("\033[H\033[2J", end="\r");
 		print("Searched to:", search);
 		print("Version PtichkaOS: ");
 		print("  1.2");
+	elif search == "dev_all_requests":
+		print("Loading...");
+		print(r1, "\n", r2, "\n", r3);
 	else:
 		print("Nothing not found.");
