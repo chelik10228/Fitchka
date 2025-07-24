@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+
+import subprocess;
+print("\033[H\033[2J", end="\r");
+print("\033[34m+----------------------+\033[0m");
+print("\033[34m|\033[0m \033[32m1\033[0m. Boot PtichkaOS    \033[34m|\033[0m");
+print("\033[34m|\033[0m \033[32m2\033[0m. Boot FildaOS      \033[34m|\033[0m");
+print("\033[34m|\033[0m \033[32m3\033[0m. Poweroff          \033[34m|\033[0m");
+print("\033[34m|\033[0m \033[94mFitchkaBoot 1.2\033[0m      \033[34m|\033[0m");
+print("\033[34m+----------------------+\033[0m");
+while True:
+    com = input("boot# ")
+    if com == "1":
+        subprocess.run(["xterm", "./ptichkaos/main.py"]);
+    elif com == "2":
+        subprocess.run(["xterm", "./fildaos/main.py"]);
+    elif com == "3":
+        exit();
