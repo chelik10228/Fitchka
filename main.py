@@ -37,7 +37,8 @@ while True:
         print("  19. rm - remove file");
         print("  20. ptichkaweb - run ptichka web browser");
         print("  21. ptichkampv - the video player using default mpv");
-        print("  21. exit - exit from ptichkaos");
+        print("  22. lsvdk - show all folders and all files");
+        print("  23. exit - exit from ptichkaos");
     elif (com[0] == "sleep"):
         sleep = input("Enter the number for time sleep: ");
         time.sleep(int(sleep));
@@ -114,5 +115,13 @@ while True:
         subprocess.run(["xterm", "./ptichkaweb"]);
     elif (com[0] == "ptichkampv"):
         subprocess.run(["mpv", "".join(com[1:])]);
+    elif (com[0] == "lsvdk"):
+        print("Virtual Disk: vdisk/");
+        print("Files & Folders: ");
+        os.system("dir");
+        print("Folder music: ");
+        os.system("dir music/");
+        print("Folder video:");
+        os.system("dir video/");
     else:
         print("Bad command.");
