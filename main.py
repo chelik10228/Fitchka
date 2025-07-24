@@ -9,7 +9,7 @@ os.chdir("vdisk/");
 
 clear = "\033[H\033[2J";
 welcome = "Welcome to \033[31mP\033[32mt\033[33mi\033[34mc\033[35mh\033[36mk\033[37ma\033[31mO\033[32mS\033[0m";
-print(clear, welcome);
+print(clear+welcome);
 while True:
     com = input("# ").split();
     if not com:
