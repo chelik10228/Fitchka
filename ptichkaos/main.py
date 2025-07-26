@@ -5,6 +5,7 @@ import os;
 import pygame;
 import subprocess;
 pygame.mixer.init();
+os.chdir("ptichkaos");
 
 clear = "\033[H\033[2J";
 welcome = "Welcome to \033[31mP\033[32mt\033[33mi\033[34mc\033[35mh\033[36mk\033[37ma\033[31mO\033[32mS\033[0m";
