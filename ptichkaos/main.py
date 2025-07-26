@@ -114,14 +114,17 @@ while True:
     elif (com[0] == "ptichkaweb"):
         subprocess.run(["xterm", "./ptichkaweb"]);
     elif (com[0] == "ptichkampv"):
-        subprocess.run(["mpv", "".join(com[1:])]);
+	    subprocess.run(["mpv", "".join(com[1:])]);
     elif (com[0] == "lsvdk"):
-        print("Virtual Disk: vdisk/");
-        print("Files & Folders: ");
-        os.system("dir");
+        class lsvdk:
+            def __init__(self,dr):
+                self.dr = os.system(f"dir {dr}");
+        print("Virtual Disk: ptichkaos/");
+        print("Files & Folders:");
+        lsvdk(".");
         print("Folder music: ");
-        os.system("dir music/");
-        print("Folder video:");
-        os.system("dir video/");
+        lsvdk("music/");
+        print("Folder video: ");
+        lsvdk("video/");
     else:
         print("Bad command.");
