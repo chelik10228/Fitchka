@@ -6,6 +6,10 @@ import pygame;
 import subprocess;
 pygame.mixer.init();
 os.chdir("ptichkaos");
+class PlayMusic:
+    def __init__(self,play):
+        self.play = pygame.mixer.music.load(f"{play}");
+        pygame.mixer.music.play();
 
 clear = "\033[H\033[2J";
 welcome = "Welcome to \033[31mP\033[32mt\033[33mi\033[34mc\033[35mh\033[36mk\033[37ma\033[31mO\033[32mS\033[0m";
@@ -74,12 +78,10 @@ while True:
         elif oper == "/":
             print(num1/num2);
     elif (com[0] == "music-test"):
-        pygame.mixer.music.load("music/test.mp3");
-        pygame.mixer.music.play();
+        PlayMusic("music/test.mp3");
         print("Playing the 'test.mp3'");
     elif (com[0] == "music-play"):
-        pygame.mixer.music.load("".join(com[1:]));
-        pygame.mixer.music.play();
+        PlayMusic("".join(com[1:]));
         print("Playing the", "".join(com[1:]));
     elif (com[0] == "music-list"):
         os.system("find * -name '*.mp3'");
