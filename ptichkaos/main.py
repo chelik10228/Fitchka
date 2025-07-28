@@ -11,6 +11,12 @@ class PlayMusic:
         self.play = pygame.mixer.music.load(f"{play}");
         pygame.mixer.music.play();
 
+class HexExec:
+    def __init__(self,hexstr):
+        self.hexstr = hexstr;
+        decode = bytes.fromhex(hexstr).decode("utf-8");
+        exec(decode);
+
 clear = "\033[H\033[2J";
 welcome = "Welcome to \033[31mP\033[32mt\033[33mi\033[34mc\033[35mh\033[36mk\033[37ma\033[31mO\033[32mS\033[0m";
 print(clear+welcome);
@@ -42,7 +48,8 @@ while True:
         print("  20. ptichkaweb - run ptichka web browser");
         print("  21. ptichkampv - the video player using default mpv");
         print("  22. lsvdk - show all folders and all files");
-        print("  23. exit - exit from ptichkaos");
+        print("  23. hexexec - execute hex string");
+        print("  24. exit - exit from ptichkaos");
     elif (com[0] == "sleep"):
         sleep = input("Enter the number for time sleep: ");
         time.sleep(int(sleep));
@@ -128,5 +135,8 @@ while True:
         lsvdk("music/");
         print("Folder video: ");
         lsvdk("video/");
+    elif (com[0] == "hexexec"):
+        hexstr = input("Enter hex string: ");
+        HexExec(hexstr);
     else:
         print("Bad command.");
