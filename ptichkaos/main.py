@@ -17,6 +17,11 @@ class HexExec:
         decode = bytes.fromhex(hexstr).decode("utf-8");
         exec(decode);
 
+class ConvertToHex:
+    def __init__(self,hexstr):
+        self.hexstr = hexstr;
+        encode = hexstr.encode("utf-8").hex();
+
 clear = "\033[H\033[2J";
 welcome = "Welcome to \033[31mP\033[32mt\033[33mi\033[34mc\033[35mh\033[36mk\033[37ma\033[31mO\033[32mS\033[0m";
 print(clear+welcome);
@@ -136,7 +141,6 @@ while True:
         print("Folder video: ");
         lsvdk("video/");
     elif (com[0] == "hexexec"):
-        hexstr = input("Enter hex string: ");
-        HexExec(hexstr);
+        subprocess.run(["xterm", "./hex_executor"]);
     else:
         print("Bad command.");

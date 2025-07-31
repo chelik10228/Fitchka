@@ -1,0 +1,39 @@
+#!/usr/bin/python3
+class ExecHexString:
+    def __init__(self,strg):
+        self.strg = strg;
+        decode = bytes.fromhex(strg).decode("utf-8");
+        exec(decode);
+
+print("1 - Execute Hex String");
+print("2 - Execute Filename of Hex String");
+print("3 - Convert Text String to Hex and output");
+print("4 - Convert Text string to Hex and save to file");
+print("0 - Exit");
+select = input(": ");
+if select == "1":
+    hexstr = input("Enter Hex String: ");
+    ExecHexString(hexstr);
+    input("Press enter to close window...");
+elif select == "2":
+    hexstr = input("Enter filename: ");
+    f = open(hexstr).read();
+    ExecHexString(f);
+    input("Press enter to close window...");
+elif select == "3":
+    textstr = input("Enter text string: ");
+    e = textstr.encode("utf-8").hex();
+    print(e);
+    input("Press enter to close window...");
+elif select == "4":
+    textstr = input("Enter text string: ");
+    file = input("Enter filename: ");
+    e = textstr.encode("utf-8").hex();
+    f = open(file, "w");
+    f;
+    fw = open(file, "a");
+    fw.write(e);
+    print(f"Successfully saved to file {file}!");
+    input("Press enter to close window...");
+elif select == "0":
+    exit();
